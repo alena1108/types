@@ -10,6 +10,7 @@ const (
 	MachineStatusFieldIPAddress       = "ipAddress"
 	MachineStatusFieldInfo            = "info"
 	MachineStatusFieldLimits          = "limits"
+	MachineStatusFieldNodeConfig      = "nodeConfig"
 	MachineStatusFieldNodeName        = "nodeName"
 	MachineStatusFieldPhase           = "phase"
 	MachineStatusFieldProvisioned     = "provisioned"
@@ -29,6 +30,7 @@ type MachineStatus struct {
 	IPAddress       string                    `json:"ipAddress,omitempty"`
 	Info            *NodeInfo                 `json:"info,omitempty"`
 	Limits          map[string]string         `json:"limits,omitempty"`
+	NodeConfig      *RKEConfigNode            `json:"nodeConfig,omitempty"`
 	NodeName        string                    `json:"nodeName,omitempty"`
 	Phase           string                    `json:"phase,omitempty"`
 	Provisioned     *bool                     `json:"provisioned,omitempty"`

@@ -68,6 +68,7 @@ type MachineStatus struct {
 	SSHUser         string             `json:"sshUser,omitempty"`
 	SSHPrivateKey   string             `json:"sshPrivateKey,omitempty"`
 	ExtractedConfig string             `json:"extractedConfig,omitempty"`
+	NodeConfig      *RKEConfigNode     `json:"nodeConfig,omitempty"`
 }
 
 type MachineCondition struct {
