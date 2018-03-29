@@ -3,6 +3,7 @@
 /dist
 *.swp
 /.trash-cache
+/trash.lock
 /.idea
 /trash.lock
 /types
