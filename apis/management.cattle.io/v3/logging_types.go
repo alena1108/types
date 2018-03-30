@@ -19,7 +19,7 @@ type ClusterLogging struct {
 	Spec ClusterLoggingSpec `json:"spec"`
 	// Most recent observed status of the cluster. More info:
 	// https://github.com/kubernetes/community/blob/master/contributors/devel/api-conventions.md#spec-and-status
-	Status LoggingStatus `json:"status"`
+	Status LoggingStatus `json:"status,omitempty"`
 }
 
 type ProjectLogging struct {
@@ -34,7 +34,7 @@ type ProjectLogging struct {
 	Spec ProjectLoggingSpec `json:"spec"`
 	// Most recent observed status of the cluster. More info:
 	// https://github.com/kubernetes/community/blob/master/contributors/devel/api-conventions.md#spec-and-status
-	Status LoggingStatus `json:"status"`
+	Status LoggingStatus `json:"status,omitempty"`
 }
 
 type LoggingCommonSpec struct {

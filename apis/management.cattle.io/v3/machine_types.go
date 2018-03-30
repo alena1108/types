@@ -19,7 +19,7 @@ type NodeTemplate struct {
 	Spec NodeTemplateSpec `json:"spec"`
 	// Most recent observed status of the cluster. More info:
 	// https://github.com/kubernetes/community/blob/master/contributors/devel/api-conventions.md#spec-and-status
-	Status NodeTemplateStatus `json:"status"`
+	Status NodeTemplateStatus `json:"status,omitempty"`
 }
 
 type NodeTemplateStatus struct {
@@ -58,7 +58,7 @@ type Node struct {
 	Spec NodeSpec `json:"spec"`
 	// Most recent observed status of the cluster. More info:
 	// https://github.com/kubernetes/community/blob/master/contributors/devel/api-conventions.md#spec-and-status
-	Status NodeStatus `json:"status"`
+	Status NodeStatus `json:"status,omitempty"`
 }
 
 type NodeStatus struct {
@@ -112,7 +112,7 @@ type NodePool struct {
 	metav1.ObjectMeta `json:"metadata,omitempty"`
 
 	Spec   NodePoolSpec   `json:"spec"`
-	Status NodePoolStatus `json:"status"`
+	Status NodePoolStatus `json:"status,omitempty"`
 }
 
 type NodePoolSpec struct {
@@ -191,7 +191,7 @@ type NodeDriver struct {
 	Spec NodeDriverSpec `json:"spec"`
 	// Most recent observed status of the cluster. More info:
 	// https://github.com/kubernetes/community/blob/master/contributors/devel/api-conventions.md#spec-and-status
-	Status NodeDriverStatus `json:"status"`
+	Status NodeDriverStatus `json:"status,omitempty"`
 }
 
 type NodeDriverStatus struct {

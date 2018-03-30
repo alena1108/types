@@ -21,7 +21,7 @@ type ClusterPipeline struct {
 	metav1.ObjectMeta `json:"metadata,omitempty"`
 
 	Spec   ClusterPipelineSpec   `json:"spec"`
-	Status ClusterPipelineStatus `json:"status"`
+	Status ClusterPipelineStatus `json:"status,omitempty"`
 }
 
 type Pipeline struct {
@@ -33,7 +33,7 @@ type Pipeline struct {
 	ProjectName string `json:"projectName" yaml:"projectName" norman:"required,type=reference[project]"`
 
 	Spec   PipelineSpec   `json:"spec"`
-	Status PipelineStatus `json:"status"`
+	Status PipelineStatus `json:"status,omitempty"`
 }
 
 type PipelineExecution struct {
@@ -45,7 +45,7 @@ type PipelineExecution struct {
 	ProjectName string `json:"projectName" yaml:"projectName" norman:"required,type=reference[project]"`
 
 	Spec   PipelineExecutionSpec   `json:"spec"`
-	Status PipelineExecutionStatus `json:"status"`
+	Status PipelineExecutionStatus `json:"status,omitempty"`
 }
 
 type PipelineExecutionLog struct {
@@ -66,7 +66,7 @@ type SourceCodeCredential struct {
 	metav1.ObjectMeta `json:"metadata,omitempty"`
 
 	Spec   SourceCodeCredentialSpec   `json:"spec"`
-	Status SourceCodeCredentialStatus `json:"status"`
+	Status SourceCodeCredentialStatus `json:"status,omitempty"`
 }
 
 type SourceCodeRepository struct {
@@ -76,7 +76,7 @@ type SourceCodeRepository struct {
 	metav1.ObjectMeta `json:"metadata,omitempty"`
 
 	Spec   SourceCodeRepositorySpec   `json:"spec"`
-	Status SourceCodeRepositoryStatus `json:"status"`
+	Status SourceCodeRepositoryStatus `json:"status,omitempty"`
 }
 
 type ClusterPipelineSpec struct {

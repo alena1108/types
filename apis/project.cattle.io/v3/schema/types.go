@@ -30,7 +30,7 @@ type ScalingGroup struct {
 	metav1.TypeMeta   `json:",inline"`
 	metav1.ObjectMeta `json:"metadata,omitempty"`
 	Spec              interface{} `json:"spec"`
-	Status            interface{} `json:"status"`
+	Status            interface{} `json:"status,omitempty"`
 }
 
 type handlerOverride struct {

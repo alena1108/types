@@ -19,5 +19,5 @@ type ProjectNetworkPolicy struct {
 	metav1.TypeMeta   `json:",inline"`
 	metav1.ObjectMeta `json:"metadata,omitempty"`
 	Spec              ProjectNetworkPolicySpec    `json:"spec"`
-	Status            *ProjectNetworkPolicyStatus `json:"status"`
+	Status            *ProjectNetworkPolicyStatus `json:"status,omitempty"`
 }

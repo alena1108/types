@@ -22,7 +22,7 @@ type Project struct {
 	metav1.ObjectMeta `json:"metadata,omitempty"`
 
 	Spec   ProjectSpec   `json:"spec,omitempty"`
-	Status ProjectStatus `json:"status"`
+	Status ProjectStatus `json:"status,omitempty"`
 }
 
 type ProjectStatus struct {

@@ -14,7 +14,7 @@ type Catalog struct {
 	// Specification of the desired behavior of the the cluster. More info:
 	// https://github.com/kubernetes/community/blob/master/contributors/devel/api-conventions.md#spec-and-status
 	Spec   CatalogSpec   `json:"spec"`
-	Status CatalogStatus `json:"status"`
+	Status CatalogStatus `json:"status,omitempty"`
 }
 
 type CatalogSpec struct {
@@ -63,7 +63,7 @@ type Template struct {
 	// Specification of the desired behavior of the the cluster. More info:
 	// https://github.com/kubernetes/community/blob/master/contributors/devel/api-conventions.md#spec-and-status
 	Spec   TemplateSpec   `json:"spec"`
-	Status TemplateStatus `json:"status"`
+	Status TemplateStatus `json:"status,omitempty"`
 }
 
 type TemplateSpec struct {
@@ -103,7 +103,7 @@ type TemplateVersion struct {
 	// Specification of the desired behavior of the the cluster. More info:
 	// https://github.com/kubernetes/community/blob/master/contributors/devel/api-conventions.md#spec-and-status
 	Spec   TemplateVersionSpec   `json:"spec"`
-	Status TemplateVersionStatus `json:"status"`
+	Status TemplateVersionStatus `json:"status,omitempty"`
 }
 
 type TemplateVersionSpec struct {

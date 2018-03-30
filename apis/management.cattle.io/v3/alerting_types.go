@@ -16,7 +16,7 @@ type ClusterAlert struct {
 	Spec ClusterAlertSpec `json:"spec"`
 	// Most recent observed status of the alert. More info:
 	// https://github.com/kubernetes/community/blob/master/contributors/devel/api-conventions.md#spec-and-status
-	Status AlertStatus `json:"status"`
+	Status AlertStatus `json:"status,omitempty"`
 }
 
 type ProjectAlert struct {
@@ -30,7 +30,7 @@ type ProjectAlert struct {
 	Spec ProjectAlertSpec `json:"spec"`
 	// Most recent observed status of the alert. More info:
 	// https://github.com/kubernetes/community/blob/master/contributors/devel/api-conventions.md#spec-and-status
-	Status AlertStatus `json:"status"`
+	Status AlertStatus `json:"status,omitempty"`
 }
 
 type AlertCommonSpec struct {
@@ -110,7 +110,7 @@ type Notifier struct {
 	Spec NotifierSpec `json:"spec"`
 	// Most recent observed status of the notifier. More info:
 	// https://github.com/kubernetes/community/blob/master/contributors/devel/api-conventions.md#spec-and-status
-	Status NotifierStatus `json:"status"`
+	Status NotifierStatus `json:"status,omitempty"`
 }
 
 type NotifierSpec struct {

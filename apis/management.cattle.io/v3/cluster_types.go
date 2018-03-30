@@ -46,7 +46,7 @@ type Cluster struct {
 	Spec ClusterSpec `json:"spec"`
 	// Most recent observed status of the cluster. More info:
 	// https://github.com/kubernetes/community/blob/master/contributors/devel/api-conventions.md#spec-and-status
-	Status ClusterStatus `json:"status"`
+	Status ClusterStatus `json:"status,omitempty"`
 }
 
 type ClusterSpec struct {
@@ -209,7 +209,7 @@ type ClusterRegistrationToken struct {
 	Spec ClusterRegistrationTokenSpec `json:"spec"`
 	// Most recent observed status of the cluster. More info:
 	// https://github.com/kubernetes/community/blob/master/contributors/devel/api-conventions.md#spec-and-status
-	Status ClusterRegistrationTokenStatus `json:"status"`
+	Status ClusterRegistrationTokenStatus `json:"status,omitempty"`
 }
 
 type ClusterRegistrationTokenSpec struct {

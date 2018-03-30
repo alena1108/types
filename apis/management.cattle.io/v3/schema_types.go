@@ -14,7 +14,7 @@ type DynamicSchema struct {
 	Spec DynamicSchemaSpec `json:"spec"`
 	// Most recent observed status of the cluster. More info:
 	// https://github.com/kubernetes/community/blob/master/contributors/devel/api-conventions.md#spec-and-status
-	Status DynamicSchemaStatus `json:"status"`
+	Status DynamicSchemaStatus `json:"status,omitempty"`
 }
 
 type DynamicSchemaSpec struct {
