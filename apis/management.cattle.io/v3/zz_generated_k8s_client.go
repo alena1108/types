@@ -57,6 +57,7 @@ type Interface interface {
 	ComposeConfigsGetter
 	ProjectCatalogsGetter
 	ClusterCatalogsGetter
+	GlobalDNSsGetter
 }
 
 type Client struct {
@@ -104,6 +105,7 @@ type Client struct {
 	composeConfigControllers                           map[string]ComposeConfigController
 	projectCatalogControllers                          map[string]ProjectCatalogController
 	clusterCatalogControllers                          map[string]ClusterCatalogController
+	globalDNSControllers                               map[string]GlobalDNSController
 }
 
 func Factory(ctx context.Context, config rest.Config) (context.Context, controller.Starter, error) {
@@ -172,6 +174,7 @@ func NewForConfig(config rest.Config) (Interface, error) {
 		composeConfigControllers:                           map[string]ComposeConfigController{},
 		projectCatalogControllers:                          map[string]ProjectCatalogController{},
 		clusterCatalogControllers:                          map[string]ClusterCatalogController{},
+		globalDNSControllers:                               map[string]GlobalDNSController{},
 	}, nil
 }
 
@@ -701,6 +704,19 @@ type ClusterCatalogsGetter interface {
 func (c *Client) ClusterCatalogs(namespace string) ClusterCatalogInterface {
 	objectClient := objectclient.NewObjectClient(namespace, c.restClient, &ClusterCatalogResource, ClusterCatalogGroupVersionKind, clusterCatalogFactory{})
 	return &clusterCatalogClient{
+		ns:           namespace,
+		client:       c,
+		objectClient: objectClient,
+	}
+}
+
+type GlobalDNSsGetter interface {
+	GlobalDNSs(namespace string) GlobalDNSInterface
+}
+
+func (c *Client) GlobalDNSs(namespace string) GlobalDNSInterface {
+	objectClient := objectclient.NewObjectClient(namespace, c.restClient, &GlobalDNSResource, GlobalDNSGroupVersionKind, globalDNSFactory{})
+	return &globalDNSClient{
 		ns:           namespace,
 		client:       c,
 		objectClient: objectClient,
